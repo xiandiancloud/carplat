@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html>
@@ -10,12 +11,18 @@
 <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
 <link href="css/base.css" rel="stylesheet">
 <link href="css/main.css" rel="stylesheet">
+<style type="text/css">
+	#fontOnground,#fontUnderground{ font-size:20px; font-family:'宋体','隶书'; font-weight:bold; color:#FFF;}
+	#carnumground,#carnumunderground{font-size:30px; font-family:'宋体','隶书'; font-weight:bold; color:#FFF;}
+	#ground,#underground{ width:300px; height:140px;}
+	</style>
 </head>
 <body>
-	<div class="content">
+	<!-- <div class="content"> -->
+	<div>
 		<div class="contentwrap">
 
-			<div class="top">
+			<div class="top" style="height:120px;>
 				<div class="header png_bg">
 					<div class="logo"><a href="" id="logo"><img src="images/logo.png"/></a></div>
 					<div class="login"> 						
@@ -38,25 +45,35 @@
 					</div>
 				</div>
 
-				<div class="flash">
+				<!-- <div class="flash">
 					<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0"  width="1050" height="405" align="center">
 						<param name="movie" value="flash/index.swf">
 						<param name="quality" value="high">
 						<param name="wmode" value="transparent">
 						<embed src="flash/index.swf"  wmode="transparent"  width="1050" height="405" align="center" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"></embed>
 					</object>
-				</div>
+				</div> -->
 			</div>
-
+			<div class="top" style="background-image:url('images/bankground .png'); height:345px;width:1050px;margin-top:-30px;">
+				<div id="ground" style="margin-left:200px; margin-top:30px; height: 163px">
+				<div style="width:280px; height:10px; margin-top:30px;"></div>
+				<p style="line-height:30px;margin-top:40px;"><span id="fontOnground">地面剩余车位</span></p>
+					<p style="margin-top:50px;"> <span id="carnumground"></span></p>				
+				</div>
+				<div id="underground" style="margin-left:200px; margin-top:70px;">
+				<p><span id=fontUnderground>地下剩余车位</span></p>
+				<p style="margin-top:20px;"><span id="carnumunderground"></span></p>
+				</div>
+				</div>
 			<div class="conmain  png_bg">
 				<div class="contentTop">
-					<div class="contentTopLeft">
+					<!-- <div class="contentTopLeft">
 						<div id="scrollWrap"> 
 							<ul id="scrollMsg"> 
 								<li><a class="msgtip" href="#">停车场管理</a></li>
 							</ul>
 						</div>
-					</div>
+					</div> -->
 					<div class="clear"></div>
 				</div>
 				<div class="copyright"><h1>车位统计</h1></div>
@@ -71,7 +88,7 @@
 		</div>
 	</div>
 
-	<div class="footer">
+	<!-- <div class="footer">
 		<div class="footerCon">
 			<div class="copyright">
 				<p>版权所有：无锡旅游商贸高等职业技术学校   COPYRIGHT © 2010 ALL RIGHTS RESERVED </p>
@@ -82,7 +99,7 @@
 			</div>
 			<div class="clear"></div>
 		</div>
-	</div>
+	</div> -->
 </body>
 <!-- <script type="text/javascript">
 	$(function(){
@@ -189,10 +206,14 @@
 			    								imgs = "images/car.png";	
 			    								imgt += '<img src="'+imgs+'" style="position:absolute;width:55px;height:55px;margin-left: '+obj.left+'px;margin-top: '+obj.top+'px;">';
 		    								}
-			    							
 			    						}
 			    					}
 			    					$("#downcar").html(imgt);
+			    					$("#carnumunderground").html(b.left);
+			    				}
+			    				else
+			    				{
+			    					$("#carnumground").html(b.left);
 			    				}
 							}				
 						$("#signal").html(t);		
